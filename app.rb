@@ -3,6 +3,7 @@ require 'sinatra/reloader'
 require 'sinatra/activerecord'
 require './models/card.rb'
 
-get '/' do
-  "Hello world!"
+get '/cards' do
+  card = Card.first
+  "#{card.word}: #{card.description}"
 end
