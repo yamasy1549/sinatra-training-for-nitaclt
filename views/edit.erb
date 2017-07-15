@@ -1,11 +1,17 @@
-<form method='post' action='/cards/<%= card.id %>'>
-  <input type='text' name='word' value='<%= card.word %>'>
-  <textarea name='description'><%= card.description %></textarea>
+<form method='post' action='/cards/<%= card.id %>' class='wordform'>
+  <div>
+    <label for='word' class='wordform__label'>Word</label>
+    <input type='text' name='word' id='word' class='wordform__input' value='<%= card.word %>'>
+  </div>
+  <div>
+    <label for='description' class='wordform__label'>Description</label>
+    <textarea name='description' id='description' class='wordform__textarea'><%= card.description %></textarea>
+  </div>
   <input type='hidden' name='_method' value='patch' />
-  <input type='submit' value='単語を更新する'>
+  <button type='submit' class='wordform__button'>単語を更新する</button>
 </form>
 
 <form method='post' action='/cards/<%= card.id %>/delete'>
   <input type='hidden' name='_method' value='delete' />
-  <input type='submit' value='削除'>
+  <button type='submit' class='wordform__button delete'>削除</button>
 </form>

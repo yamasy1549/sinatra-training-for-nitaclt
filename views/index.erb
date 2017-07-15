@@ -1,7 +1,10 @@
-<ul>
+<ul class='wordlist'>
   <% cards.each do |card| %>
-    <li>
-      <%= card.word %>: <%= card.description %>
+    <li class='wordlist__item'>
+      <a href='/cards/<%= card.id %>/edit' class='wordlist__item__link'>
+        <h3 class='wordlist__item__word'><%= card.word %></h3>
+        <p class='wordlist__item__description'><%= card.description %></p>
+      </a>
     </li>
   <% end %>
 </ul>
